@@ -1,0 +1,26 @@
+[versions]
+
+junit = "5.10.1"
+kotlin = "1.9.22"
+mockk = "1.13.9"
+spotless = "6.25.0"
+
+[libraries]
+
+# Tests
+junit_params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit" }
+kotlin_test = { module = "org.jetbrains.kotlin:kotlin-test" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+
+[plugins]
+
+kotlin_jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+
+[bundles]
+
+test_all = [
+    "junit_params",
+    "kotlin_test",
+    "mockk",
+]

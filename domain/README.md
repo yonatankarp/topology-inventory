@@ -18,8 +18,3 @@ The domain module contains the following:
 In this specific project, the domain looks as follows:
 
 ![domain-components-diagram.png](etc/domain-components-diagram.png)
-
-We're leveraging the power of aggregate (DDD) in this project, with the
-following class diagram:
-
-![aggregate-class-diagram.png](etc/aggregate-class-diagram.png)

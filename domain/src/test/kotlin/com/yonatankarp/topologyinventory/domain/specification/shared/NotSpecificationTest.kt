@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import kotlin.test.Test
 
 class NotSpecificationTest {
-
     @Test
     fun `isSatisfiedBy returns true when the inner specification is not satisfied`() {
         // Given

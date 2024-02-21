@@ -9,7 +9,6 @@ import org.junit.jupiter.api.assertDoesNotThrow
 import kotlin.test.Test
 
 class SameIpSpecTest {
-
     @Test
     fun `isSatisfiedBy returns true when equipments have different IPs`() {
         // Given

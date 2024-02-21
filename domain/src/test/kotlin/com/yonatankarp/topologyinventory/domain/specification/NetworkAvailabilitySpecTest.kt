@@ -3,11 +3,13 @@ package com.yonatankarp.topologyinventory.domain.specification
 import com.yonatankarp.topologyinventory.domain.entity.SwitchFixture
 import com.yonatankarp.topologyinventory.domain.exception.GenericSpecificationException
 import com.yonatankarp.topologyinventory.domain.valueobject.NetworkFixture
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertDoesNotThrow
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertThrows
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class NetworkAvailabilitySpecTest {
-
     @Test
     fun `isSatisfiedBy returns true when network is not present in switch networks`() {
         // Given

@@ -11,7 +11,6 @@ import kotlin.test.Test
 import kotlin.test.assertNull
 
 class SwitchServiceTest {
-
     @Test
     fun `filterAndRetrieveSwitch returns an empty list if no switches match the predicate`() {
         // Given
@@ -59,17 +58,17 @@ class SwitchServiceTest {
             SwitchFixture.createSwitch(
                 IPFixture.IPV4,
                 12u,
-                LocationFixture.createLocation("US")
+                LocationFixture.createLocation("US"),
             ),
             SwitchFixture.createSwitch(
                 IPFixture.IPV4,
                 12u,
-                LocationFixture.createLocation("GB")
+                LocationFixture.createLocation("GB"),
             ),
             SwitchFixture.createSwitch(
                 IPFixture.IPV6,
                 12u,
-                LocationFixture.createLocation("DE")
+                LocationFixture.createLocation("DE"),
             ),
         )
 
@@ -78,34 +77,34 @@ class SwitchServiceTest {
             SwitchFixture.createSwitch(
                 IPFixture.IPV4,
                 12u,
-                LocationFixture.createLocation("US")
+                LocationFixture.createLocation("US"),
             ),
             SwitchFixture.createSwitch(
                 IPFixture.IPV4,
                 12u,
-                LocationFixture.createLocation("GB")
+                LocationFixture.createLocation("GB"),
             ),
         )
 
     private fun switchesMap() =
         mapOf(
             Id.withId("82e24dc0-170b-45e0-b70f-9f133f0a33db") to
-                    SwitchFixture.createSwitch(
-                        IPFixture.IPV4,
-                        12u,
-                        LocationFixture.createLocation("US")
-                    ),
+                SwitchFixture.createSwitch(
+                    IPFixture.IPV4,
+                    12u,
+                    LocationFixture.createLocation("US"),
+                ),
             Id.withId("176f5148-54fc-4646-9ac2-0e9d99d7c6e8") to
-                    SwitchFixture.createSwitch(
-                        IPFixture.IPV4,
-                        12u,
-                        LocationFixture.createLocation("GB")
-                    ),
+                SwitchFixture.createSwitch(
+                    IPFixture.IPV4,
+                    12u,
+                    LocationFixture.createLocation("GB"),
+                ),
             Id.withId("78c3ed36-4ca7-4adf-a4c6-97e6ce280e7a") to
-                    SwitchFixture.createSwitch(
-                        IPFixture.IPV6,
-                        12u,
-                        LocationFixture.createLocation("DE")
-                    ),
+                SwitchFixture.createSwitch(
+                    IPFixture.IPV6,
+                    12u,
+                    LocationFixture.createLocation("DE"),
+                ),
         )
 }

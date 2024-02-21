@@ -5,11 +5,12 @@ object NetworkFixture {
     val cidr = CIDR(24u)
 
     val network: Network
-        get() = Network(
-            address = IP.fromAddress(IPFixture.IPV4),
-            name = networkName,
-            cidr = cidr,
-        )
+        get() =
+            Network(
+                address = IP.fromAddress(IPFixture.IPV4),
+                name = networkName,
+                cidr = cidr,
+            )
 
     fun createNetwork(
         address: String,

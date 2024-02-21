@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import kotlin.test.Test
 
 class AndSpecificationTest {
-
     @Test
     fun `isSatisfiedBy returns true when both spec1 and spec2 are satisfied`() {
         // Given
@@ -92,5 +91,4 @@ class AndSpecificationTest {
             andSpecification.check("value")
         }
     }
-
 }

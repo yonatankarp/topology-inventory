@@ -11,15 +11,15 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class SameCountrySpecTest {
-
     @Test
     fun `isSatisfiedBy returns true when both equipments are CoreRouters`() {
         // Given
         val equipment1 = RouterFixture.coreRouter
-        val equipment2 = RouterFixture.createCoreRouter(
-            location = LocationFixture.createLocation("IL"),
-            address = IPFixture.IPV6
-        )
+        val equipment2 =
+            RouterFixture.createCoreRouter(
+                location = LocationFixture.createLocation("IL"),
+                address = IPFixture.IPV6,
+            )
         val sameCountrySpec = SameCountrySpec(equipment1)
 
         // When
@@ -33,10 +33,11 @@ class SameCountrySpecTest {
     fun `isSatisfiedBy returns true when equipments are in the same country`() {
         // Given
         val equipment1 = RouterFixture.coreRouter
-        val equipment2 = RouterFixture.createCoreRouter(
-            location = LocationFixture.createLocation("US"),
-            address = IPFixture.IPV6
-        )
+        val equipment2 =
+            RouterFixture.createCoreRouter(
+                location = LocationFixture.createLocation("US"),
+                address = IPFixture.IPV6,
+            )
         val sameCountrySpec = SameCountrySpec(equipment1)
 
         // When
@@ -50,10 +51,11 @@ class SameCountrySpecTest {
     fun `isSatisfiedBy returns false when equipments are in different countries`() {
         // Given
         val equipment1 = RouterFixture.edgeRouter
-        val equipment2 = RouterFixture.createEdgeRouter(
-            location = LocationFixture.createLocation("NL"),
-            address = IPFixture.IPV6
-        )
+        val equipment2 =
+            RouterFixture.createEdgeRouter(
+                location = LocationFixture.createLocation("NL"),
+                address = IPFixture.IPV6,
+            )
         val sameCountrySpec = SameCountrySpec(equipment1)
 
         // When
@@ -67,10 +69,11 @@ class SameCountrySpecTest {
     fun `check throws GenericSpecificationException when equipments are in different countries`() {
         // Given
         val equipment1 = RouterFixture.edgeRouter
-        val equipment2 = RouterFixture.createEdgeRouter(
-            location = LocationFixture.createLocation("NL"),
-            address = IPFixture.IPV6
-        )
+        val equipment2 =
+            RouterFixture.createEdgeRouter(
+                location = LocationFixture.createLocation("NL"),
+                address = IPFixture.IPV6,
+            )
         val sameCountrySpec = SameCountrySpec(equipment1)
 
         // When, Then

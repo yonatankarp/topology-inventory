@@ -15,6 +15,7 @@ jobs:
     uses: yonatankarp/github-actions/.github/workflows/ci.yml@v1
     with:
       build_dockerfile: false
+      context: .
 
   dependabot_auto_merge:
     needs: pipeline

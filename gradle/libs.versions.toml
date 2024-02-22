@@ -9,9 +9,9 @@ spotless = "6.25.0"
 [libraries]
 
 # Tests
-cucumber_java = { module = "io.cucumber:cucumber-java", version.ref = "cucumber" }
 cucumber_junit = { module = "io.cucumber:cucumber-junit", version.ref = "cucumber" }
-cucumber_picocontainer = { module = "io.cucumber:cucumber_picocontainer", version.ref = "cucumber" }
+cucumber_jvm8 = { module = "io.cucumber:cucumber-java8", version.ref = "cucumber" }
+cucumber_picocontainer = { module = "io.cucumber:cucumber-picocontainer", version.ref = "cucumber" }
 junit_params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit" }
 kotlin_test = { module = "org.jetbrains.kotlin:kotlin-test" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
@@ -24,8 +24,8 @@ spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 [bundles]
 
 cucumber_all = [
-    "cucumber_java",
     "cucumber_junit",
+    "cucumber_jvm8",
     "cucumber_picocontainer",
 ]
 

@@ -3,4 +3,5 @@ dependencies {
 
     testImplementation(libs.bundles.test.all)
     testImplementation(libs.bundles.cucumber.all)
+    testImplementation(testFixtures(project(":domain")))
 }

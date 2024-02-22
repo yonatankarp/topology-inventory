@@ -25,7 +25,7 @@ class CoreRouter(
     val routers: Map<Id, Router>
         get() = _routers.toMap()
 
-    fun addRouter(anyRouter: Router): Map<Id, Router> {
+    fun addRouter(anyRouter: Router): CoreRouter {
         val sameCountryRouterSpec = SameCountrySpec(this)
         val sameIpSpec = SameIpSpec(this)
 
@@ -34,7 +34,7 @@ class CoreRouter(
 
         _routers[anyRouter.id] = anyRouter
 
-        return routers
+        return this
     }
 
     fun removeRouter(anyRouter: Router): Router? {

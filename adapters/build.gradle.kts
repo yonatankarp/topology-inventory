@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.springboot)
     alias(libs.plugins.springboot.bom)
     alias(libs.plugins.kotlin.spring)
+    `java-test-fixtures`
 }
 
 dependencies {
@@ -10,11 +11,12 @@ dependencies {
     implementation(libs.bundles.springboot.all)
 
     testImplementation(libs.bundles.test.all)
+    testImplementation(testFixtures(project(":domain")))
 }
 
 tasks {
     jar {
-        enabled = false
+        enabled = true
     }
 
     bootJar {

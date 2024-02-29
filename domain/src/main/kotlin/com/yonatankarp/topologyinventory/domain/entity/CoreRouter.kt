@@ -20,11 +20,8 @@ class CoreRouter(
     ip: IP,
     location: Location,
     routerType: RouterType,
-    private val _routers: MutableMap<Id, Router> = mutableMapOf(),
+    var routers: MutableMap<Id, Router> = mutableMapOf(),
 ) : Router(id, vendor, model, ip, location, routerType) {
-    val routers: Map<Id, Router>
-        get() = _routers.toMap()
-
     fun addRouter(anyRouter: Router): CoreRouter {
         val sameCountryRouterSpec = SameCountrySpec(this)
         val sameIpSpec = SameIpSpec(this)
@@ -32,7 +29,7 @@ class CoreRouter(
         sameCountryRouterSpec.check(anyRouter)
         sameIpSpec.check(anyRouter)
 
-        _routers[anyRouter.id] = anyRouter
+        routers[anyRouter.id] = anyRouter
 
         return this
     }
@@ -53,6 +50,6 @@ class CoreRouter(
             }
         }
 
-        return _routers.remove(anyRouter.id)
+        return routers.remove(anyRouter.id)
     }
 }

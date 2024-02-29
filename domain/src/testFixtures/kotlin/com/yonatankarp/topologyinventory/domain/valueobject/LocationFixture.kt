@@ -6,7 +6,7 @@ object LocationFixture {
             Address("Test street"),
             City("Test city"),
             State("Test state"),
-            ZipCode(12345),
+            ZipCode(12345u),
             Country(country),
             10f.latitude(),
             (-10f).longitude(),

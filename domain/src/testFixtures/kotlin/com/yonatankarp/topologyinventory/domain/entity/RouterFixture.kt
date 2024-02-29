@@ -17,7 +17,7 @@ object RouterFixture {
                 Id.withoutId(),
                 Vendor.HP,
                 Model.XYZ0001,
-                IP.fromAddress(IPV4),
+                IP(IPV4),
                 LocationFixture.createLocation("US"),
                 RouterType.CORE,
             )
@@ -28,7 +28,7 @@ object RouterFixture {
                 Id.withoutId(),
                 Vendor.CISCO,
                 Model.XYZ0002,
-                IP.fromAddress(IPV6),
+                IP(IPV6),
                 LocationFixture.createLocation("US"),
                 RouterType.EDGE,
             )
@@ -40,7 +40,7 @@ object RouterFixture {
         Id.withoutId(),
         Vendor.CISCO,
         Model.XYZ0002,
-        IP.fromAddress(address),
+        IP(address),
         location,
         RouterType.EDGE,
     )
@@ -52,7 +52,7 @@ object RouterFixture {
         Id.withoutId(),
         Vendor.HP,
         Model.XYZ0001,
-        IP.fromAddress(address),
+        IP(address),
         location,
         RouterType.CORE,
     )

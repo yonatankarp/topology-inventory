@@ -8,6 +8,12 @@ data class Network(
     init {
         require(cidr.value in 1u..32u) { "Invalid CIDR value" }
     }
+
+    companion object {
+        fun getNetworkProtocolPredicate(protocol: Protocol): (Network) -> Boolean = { it.address.protocol == protocol }
+
+        fun getNetworkNetPredicate(name: NetworkName): (Network) -> Boolean = { it.name == name }
+    }
 }
 
 @JvmInline

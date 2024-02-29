@@ -7,8 +7,4 @@ data class IP(val ipAddress: String) {
         } else {
             Protocol.IPv6
         }
-
-    companion object {
-        fun fromAddress(ipAddress: String) = IP(ipAddress)
-    }
 }

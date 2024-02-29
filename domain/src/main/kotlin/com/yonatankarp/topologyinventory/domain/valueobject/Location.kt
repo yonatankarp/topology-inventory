@@ -20,7 +20,7 @@ value class City(val value: String)
 value class State(val value: String)
 
 @JvmInline
-value class ZipCode(val value: Int)
+value class ZipCode(val value: UInt)
 
 @JvmInline
 value class Country(val value: String)

@@ -10,7 +10,7 @@ class LocationTest {
         val address = Address("123 Main St")
         val city = City("Springfield")
         val state = State("IL")
-        val zipCode = ZipCode(12345)
+        val zipCode = ZipCode(12345u)
         val country = Country("USA")
         val latitude = Latitude(40.7128f)
         val longitude = Longitude(-74.0060f)

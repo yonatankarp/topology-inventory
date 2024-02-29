@@ -8,7 +8,7 @@ class NetworkTest {
     @Test
     fun `network properties are correctly initialized`() {
         // Given
-        val ipAddress = IP.fromAddress(IPV4)
+        val ipAddress = IP(IPV4)
         val networkName = NetworkFixture.networkName
         val cidr = NetworkFixture.cidr
 
@@ -24,7 +24,7 @@ class NetworkTest {
     @Test
     fun `invalid CIDR value throws IllegalArgumentException`() {
         // Given
-        val ipAddress = IP.fromAddress(IPV4)
+        val ipAddress = IP(IPV4)
         val networkName = NetworkFixture.networkName
         val invalidCidr = CIDR(40u)
 

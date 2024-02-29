@@ -5,8 +5,15 @@ junit = "5.10.1"
 kotlin = "1.9.22"
 mockk = "1.13.9"
 spotless = "6.25.0"
+springboot = "3.2.3"
+springBOM = "1.1.4"
 
 [libraries]
+
+# Spring Boot
+springboot_jpa_starter = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+springboot_test_starter = { module = "org.springframework.boot:spring-boot-starter-test" }
+springboot_web_starter = { module = "org.springframework.boot:spring-boot-starter-web" }
 
 # Tests
 cucumber_junit = { module = "io.cucumber:cucumber-junit", version.ref = "cucumber" }
@@ -19,7 +26,10 @@ mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 [plugins]
 
 kotlin_jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin_spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+springboot = { id = "org.springframework.boot", version.ref = "springboot" }
+springboot_bom = { id = "io.spring.dependency-management", version.ref = "springBOM" }
 
 [bundles]
 
@@ -33,4 +43,10 @@ test_all = [
     "junit_params",
     "kotlin_test",
     "mockk",
+]
+
+springboot_all = [
+    "springboot_jpa_starter",
+    "springboot_test_starter",
+    "springboot_web_starter",
 ]

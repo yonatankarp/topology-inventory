@@ -7,7 +7,7 @@ object NetworkFixture {
     val network: Network
         get() =
             Network(
-                address = IP.fromAddress(IPFixture.IPV4),
+                address = IP(IPFixture.IPV4),
                 name = networkName,
                 cidr = cidr,
             )
@@ -16,7 +16,7 @@ object NetworkFixture {
         address: String,
         cidr: UInt,
     ) = Network(
-        address = IP.fromAddress(address),
+        address = IP(address),
         name = NetworkName("NewNetwork"),
         cidr = CIDR(cidr),
     )

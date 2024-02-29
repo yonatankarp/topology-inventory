@@ -37,9 +37,10 @@ object SwitchFixture {
         Id.withId("f8c3de3d-1fea-4d7c-a8b0-29f63c4c3490"),
         Vendor.CISCO,
         Model.XYZ0004,
-        IP.fromAddress("20.0.0.100"),
+        IP("20.0.0.100"),
         location,
         SwitchType.LAYER3,
+        Id.withoutId(),
         networks.toMutableList(),
     )
 

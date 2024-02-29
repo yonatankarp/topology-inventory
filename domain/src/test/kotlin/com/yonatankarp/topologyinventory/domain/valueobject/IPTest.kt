@@ -12,7 +12,7 @@ class IPTest {
         val ipv4Address = IPV4
 
         // When
-        val ip = IP.fromAddress(ipv4Address)
+        val ip = IP(ipv4Address)
 
         // Then
         assertEquals(Protocol.IPv4, ip.protocol)
@@ -24,7 +24,7 @@ class IPTest {
         val ipv6Address = IPV6
 
         // When
-        val ip = IP.fromAddress(ipv6Address)
+        val ip = IP(ipv6Address)
 
         // Then
         assertEquals(Protocol.IPv6, ip.protocol)

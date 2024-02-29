@@ -1,3 +1,0 @@
-package com.yonatankarp.topologyinventory.application.ports.output
-
-interface RouterRemoveOutputPort

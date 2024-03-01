@@ -11,7 +11,13 @@ archivesName = "topology-inventory-springboot"
 version = "1.0.0"
 
 dependencies {
+    api(project(":domain"))
+    api(project(":application"))
+    api(project(":adapters"))
+
+    implementation(libs.bundles.kotlin.all)
     implementation(libs.bundles.springboot.all)
+    runtimeOnly(libs.h2)
 }
 
 tasks {

@@ -1,5 +1,6 @@
 [versions]
 
+coroutines = "1.8.0"
 cucumber = "7.15.0"
 jakarta = "3.1.0"
 junit = "5.10.1"
@@ -11,13 +12,24 @@ springboot = "3.2.3"
 
 [libraries]
 
+# Kotlin & Coroutines
+kotlin_core = { module = "org.jetbrains.kotlin:kotlin-stdlib" }
+kotlin_jackson_module = { module = "com.fasterxml.jackson.module:jackson-module-kotlin" }
+kotlin_reflection = { module = "org.jetbrains.kotlin:kotlin-reflect" }
+kotlinx_coroutines_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx_coroutines_reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor", version.ref = "coroutines" }
+kotlinx_coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+
 # Spring Boot
+springboot_data_jpa_starter = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
 springboot_jpa_starter = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
 springboot_test_starter = { module = "org.springframework.boot:spring-boot-starter-test" }
+springboot_validation_starter = { module = "org.springframework.boot:spring-boot-starter-validation" }
 springboot_web_starter = { module = "org.springframework.boot:spring-boot-starter-web" }
 
 # Persistance
-jakarta_persistence = {module = "jakarta.persistence:jakarta.persistence-api", version.ref = "jakarta"}
+h2 = { module = "com.h2database:h2" }
+jakarta_persistence_api = { module = "jakarta.persistence:jakarta.persistence-api", version.ref = "jakarta" }
 
 # Tests
 cucumber_junit = { module = "io.cucumber:cucumber-junit", version.ref = "cucumber" }
@@ -43,14 +55,25 @@ cucumber_all = [
     "cucumber_picocontainer",
 ]
 
-test_all = [
-    "junit_params",
-    "kotlin_test",
-    "mockk",
+kotlin_all = [
+    "kotlin_core",
+    "kotlin_jackson_module",
+    "kotlin_reflection",
+    "kotlinx_coroutines_core",
+    "kotlinx_coroutines_reactor",
 ]
 
 springboot_all = [
+    "springboot_data_jpa_starter",
     "springboot_jpa_starter",
     "springboot_test_starter",
+    "springboot_validation_starter",
     "springboot_web_starter",
+]
+
+test_all = [
+    "junit_params",
+    "kotlin_test",
+    "kotlinx_coroutines_test",
+    "mockk",
 ]

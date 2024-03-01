@@ -10,7 +10,7 @@ import jakarta.persistence.EntityManager
 class RemoveRouterH2Adapter(
     private val entityManager: EntityManager,
 ) : RemoveRouterPort {
-    override fun invoke(id: Id): Router? =
+    override fun invoke(id: Id): Router =
         entityManager.getReference(RouterData::class.java, id.value)
             .also { entityManager.remove(it) }
             .toDomain()

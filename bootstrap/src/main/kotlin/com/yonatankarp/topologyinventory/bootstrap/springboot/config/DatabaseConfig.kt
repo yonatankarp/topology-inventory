@@ -1,4 +1,4 @@
-package com.yonatankarp.topologyinventory.adapters.output.database
+package com.yonatankarp.topologyinventory.bootstrap.springboot.config
 
 import jakarta.persistence.EntityManager
 import jakarta.persistence.Persistence

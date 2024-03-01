@@ -3,9 +3,7 @@ package com.yonatankarp.topologyinventory.adapters.input.http.switchs
 import com.yonatankarp.topologyinventory.application.ports.input.switchs.GetSwitchPort
 import com.yonatankarp.topologyinventory.domain.entity.Switch
 import com.yonatankarp.topologyinventory.domain.valueobject.Id
-import org.springframework.web.bind.annotation.RestController
 
-@RestController
 class GetSwitchHttpAdapter(
     private val getSwitchPort: GetSwitchPort,
 ) {

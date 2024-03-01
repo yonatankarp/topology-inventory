@@ -6,9 +6,7 @@ import com.yonatankarp.topologyinventory.application.ports.output.routers.GetRou
 import com.yonatankarp.topologyinventory.domain.entity.Router
 import com.yonatankarp.topologyinventory.domain.valueobject.Id
 import jakarta.persistence.EntityManager
-import org.springframework.stereotype.Repository
 
-@Repository
 class RetrieveRouterH2Adapter(
     private val entityManager: EntityManager,
 ) : GetRouterPort {

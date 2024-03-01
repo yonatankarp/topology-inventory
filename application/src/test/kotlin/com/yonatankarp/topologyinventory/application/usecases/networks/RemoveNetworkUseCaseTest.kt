@@ -1,7 +1,7 @@
 package com.yonatankarp.topologyinventory.application.usecases.networks
 
-import com.yonatankarp.topologyinventory.application.ports.input.routers.AddRouterPort
 import com.yonatankarp.topologyinventory.application.ports.output.routers.GetRouterPort
+import com.yonatankarp.topologyinventory.application.ports.output.routers.PersistRouterPort
 import com.yonatankarp.topologyinventory.domain.entity.RouterFixture
 import com.yonatankarp.topologyinventory.domain.entity.Switch
 import com.yonatankarp.topologyinventory.domain.valueobject.NetworkFixture
@@ -14,7 +14,7 @@ import kotlin.test.Test
 
 class RemoveNetworkUseCaseTest {
     private val getRouterPort = mockk<GetRouterPort>(relaxed = true)
-    private val addRouterPort = mockk<AddRouterPort>(relaxed = true)
+    private val persistRouterPort = mockk<PersistRouterPort>(relaxed = true)
     private val networkSwitch = mockk<Switch>(relaxed = true)
 
     @BeforeEach
@@ -31,7 +31,7 @@ class RemoveNetworkUseCaseTest {
         every { getRouterPort(any()) } returns edgeRouter
 
         every { networkSwitch.removeNetworksFromSwitch(any()) } returns true
-        val removeNetworkUseCase = RemoveNetworkUseCase(getRouterPort, addRouterPort)
+        val removeNetworkUseCase = RemoveNetworkUseCase(getRouterPort, persistRouterPort)
 
         // When
         val result = removeNetworkUseCase(network.name, networkSwitch)

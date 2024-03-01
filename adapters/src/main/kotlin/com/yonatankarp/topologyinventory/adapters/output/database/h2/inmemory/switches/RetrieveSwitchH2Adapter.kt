@@ -6,9 +6,7 @@ import com.yonatankarp.topologyinventory.application.ports.output.switchs.Retrie
 import com.yonatankarp.topologyinventory.domain.entity.Switch
 import com.yonatankarp.topologyinventory.domain.valueobject.Id
 import jakarta.persistence.EntityManager
-import org.springframework.stereotype.Repository
 
-@Repository
 class RetrieveSwitchH2Adapter(
     private val entityManager: EntityManager,
 ) : RetrieveSwitchPort {

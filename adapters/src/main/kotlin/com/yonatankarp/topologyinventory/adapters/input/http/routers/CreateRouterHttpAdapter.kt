@@ -8,9 +8,7 @@ import com.yonatankarp.topologyinventory.domain.valueobject.Location
 import com.yonatankarp.topologyinventory.domain.valueobject.Model
 import com.yonatankarp.topologyinventory.domain.valueobject.RouterType
 import com.yonatankarp.topologyinventory.domain.valueobject.Vendor
-import org.springframework.web.bind.annotation.RestController
 
-@RestController
 class CreateRouterHttpAdapter(
     private val createRouterPort: CreateRouterPort,
     private val persistRouterPort: PersistRouterPort,

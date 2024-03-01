@@ -1,4 +1,4 @@
-package com.yonatankarp.topologyinventory.bootstrap
+package com.yonatankarp.topologyinventory.bootstrap.springboot
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

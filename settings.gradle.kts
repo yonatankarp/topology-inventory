@@ -3,6 +3,5 @@ include(
     "domain",
     "application",
     "adapters",
-    "bootstrap:springboot",
-    "bootstrap:quarkus",
+    "bootstrap",
 )

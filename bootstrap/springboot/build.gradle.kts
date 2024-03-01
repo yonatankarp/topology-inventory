@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.yonatankarp"
-archivesName = "topology-inventory"
+archivesName = "topology-inventory-springboot"
 version = "1.0.0"
 
 dependencies {

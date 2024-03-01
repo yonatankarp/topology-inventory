@@ -4,9 +4,7 @@ import com.yonatankarp.topologyinventory.adapters.output.database.h2.inmemory.ma
 import com.yonatankarp.topologyinventory.application.ports.output.routers.PersistRouterPort
 import com.yonatankarp.topologyinventory.domain.entity.Router
 import jakarta.persistence.EntityManager
-import org.springframework.stereotype.Repository
 
-@Repository
 class PersistRouterH2Adapter(
     private val entityManager: EntityManager,
 ) : PersistRouterPort {

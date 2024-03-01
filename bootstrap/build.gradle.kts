@@ -11,7 +11,7 @@ archivesName = "topology-inventory"
 version = "1.0.0"
 
 dependencies {
-    implementation(libs.springboot.web.starter)
+    implementation(libs.bundles.springboot.all)
 }
 
 tasks {

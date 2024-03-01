@@ -5,9 +5,7 @@ import com.yonatankarp.topologyinventory.application.ports.input.switchs.GetSwit
 import com.yonatankarp.topologyinventory.domain.entity.Switch
 import com.yonatankarp.topologyinventory.domain.valueobject.Id
 import com.yonatankarp.topologyinventory.domain.valueobject.NetworkName
-import org.springframework.web.bind.annotation.RestController
 
-@RestController
 class RemoveNetworkHttpAdapter(
     private val getSwitchPort: GetSwitchPort,
     private val removeNetworkPort: RemoveNetworkPort,

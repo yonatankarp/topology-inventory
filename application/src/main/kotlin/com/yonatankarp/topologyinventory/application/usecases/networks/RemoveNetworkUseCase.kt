@@ -1,8 +1,8 @@
 package com.yonatankarp.topologyinventory.application.usecases.networks
 
 import com.yonatankarp.topologyinventory.application.ports.input.networks.RemoveNetworkPort
-import com.yonatankarp.topologyinventory.application.ports.input.routers.AddRouterPort
 import com.yonatankarp.topologyinventory.application.ports.output.routers.GetRouterPort
+import com.yonatankarp.topologyinventory.application.ports.output.routers.PersistRouterPort
 import com.yonatankarp.topologyinventory.domain.entity.EdgeRouter
 import com.yonatankarp.topologyinventory.domain.entity.Switch
 import com.yonatankarp.topologyinventory.domain.service.NetworkService
@@ -11,7 +11,7 @@ import com.yonatankarp.topologyinventory.domain.valueobject.NetworkName
 
 class RemoveNetworkUseCase(
     private val getRouterPort: GetRouterPort,
-    private val addRouterPort: AddRouterPort,
+    private val persistRouterPort: PersistRouterPort,
 ) : RemoveNetworkPort {
     override fun invoke(
         networkName: NetworkName,
@@ -31,12 +31,12 @@ class RemoveNetworkUseCase(
         val network =
             NetworkService.filterAndRetrieveNetworks(
                 switchToRemoveNetwork.switchNetworks,
-                Network.getNetworkNetPredicate(networkName),
+                Network.getNetworkNamePredicate(networkName),
             )
 
         switchToRemoveNetwork.removeNetworksFromSwitch(network)
 
-        addRouterPort.persist(edgeRouter)
+        persistRouterPort(edgeRouter)
 
         return if (switchToRemoveNetwork.removeNetworksFromSwitch(network)) {
             switchToRemoveNetwork

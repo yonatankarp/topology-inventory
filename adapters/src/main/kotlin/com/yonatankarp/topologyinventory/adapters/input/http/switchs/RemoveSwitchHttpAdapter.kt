@@ -5,7 +5,9 @@ import com.yonatankarp.topologyinventory.application.ports.input.routers.GetRout
 import com.yonatankarp.topologyinventory.application.ports.input.switchs.RemoveSwitchPort
 import com.yonatankarp.topologyinventory.domain.entity.EdgeRouter
 import com.yonatankarp.topologyinventory.domain.valueobject.Id
+import org.springframework.web.bind.annotation.RestController
 
+@RestController
 class RemoveSwitchHttpAdapter(
     private val removeSwitchPort: RemoveSwitchPort,
     private val getRouterPort: GetRouterPort,

@@ -12,7 +12,7 @@ data class Network(
     companion object {
         fun getNetworkProtocolPredicate(protocol: Protocol): (Network) -> Boolean = { it.address.protocol == protocol }
 
-        fun getNetworkNetPredicate(name: NetworkName): (Network) -> Boolean = { it.name == name }
+        fun getNetworkNamePredicate(name: NetworkName): (Network) -> Boolean = { it.name == name }
     }
 }
 

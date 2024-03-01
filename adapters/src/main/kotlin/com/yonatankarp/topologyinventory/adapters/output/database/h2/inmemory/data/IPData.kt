@@ -9,7 +9,7 @@ import jakarta.persistence.Enumerated
 data class IPData(val address: String = "") {
     @Embedded
     @Enumerated(EnumType.STRING)
-    private val protocol =
+    val protocol =
         if (address.length <= 15) {
             ProtocolData.IPV4
         } else {

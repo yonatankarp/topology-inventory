@@ -12,7 +12,9 @@ import com.yonatankarp.topologyinventory.domain.valueobject.Model
 import com.yonatankarp.topologyinventory.domain.valueobject.RouterType
 import com.yonatankarp.topologyinventory.domain.valueobject.SwitchType
 import com.yonatankarp.topologyinventory.domain.valueobject.Vendor
+import org.springframework.web.bind.annotation.RestController
 
+@RestController
 class CreateSwitchHttpAdapter(
     private val createSwitchPort: CreateSwitchPort,
     private val addSwitchPort: AddSwitchPort,
